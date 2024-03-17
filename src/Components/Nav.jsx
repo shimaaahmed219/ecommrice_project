@@ -1,12 +1,12 @@
-import { ShoppingCart, SearchOutlined } from "@mui/icons-material";
-import LocalAtmIcon from "@mui/icons-material/LocalAtm";
-import PersonIcon from "@mui/icons-material/Person";
-import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import ChatIcon from "@mui/icons-material/Chat";
+import { SearchOutlined } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import LanguageIcon from "@mui/icons-material/Language";
+import PersonIcon from "@mui/icons-material/Person";
+import eg from "../../image/bag/eg.svg";
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import Actions from "./Actions";
 
-export default function Navbar() {
+export default function Nav() {
   return (
     <div className="w-full  flex-col shadow-xl flex bg-bg ">
       <div className="flex justify-around items-center ml-20 ">
@@ -41,33 +41,36 @@ export default function Navbar() {
             search
           </button>
         </div>
-        <div className="flex justify-between gap-x-7">
-          <Link className="flex flex-col items-center" to="">
-            {" "}
-            <PersonIcon />
-            <span> my profile</span>
-          </Link>
+        {/*  */}
 
-          <Link className="flex flex-col items-center" to="">
-            <ChatIcon />
-            <span>messages</span>
-          </Link>
-
-          <Link className="flex flex-col items-center" to="/orders">
-            {" "}
-            <LocalAtmIcon />
-            <span>orders</span>
-          </Link>
-
-          <Link className="flex flex-col items-center" to="/cart">
-            <ShoppingCart />
-            <span>cart</span>
-          </Link>
+        <div>
+        <ul className="flex justify-between gap-x-6 my-5 font-thin text-[16px] items-center">
+          <li className="w-[80px]">
+            deliver to:{" "}
+            <span className="text-[18px] font-extralight">
+              <img src={eg} width={20} className="inline-block" />
+              EG
+            </span>
+          </li>
+          <li>
+            <LanguageIcon />
+            English_USD
+          </li>
+          <li>
+            <Link>
+              <PersonIcon />
+              sign in
+            </Link>
+          </li>
+          <li>
+            <Link className="w-[120px] h-[45px] flex justify-center font-bold font-crimson items-center  rounded-[20px] text-white bg-oranged">
+              sign up
+            </Link>
+          </li>
+        </ul>
         </div>
       </div>
-      <div>
-        <Actions />
-      </div>
+      <Actions/>
     </div>
   );
 }

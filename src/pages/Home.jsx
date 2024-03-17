@@ -1,22 +1,21 @@
-import Navbar from "../Components/Navbar";
-import img from '../../image/bag/photo-young-brunette-woman-sunglasses-holding-shopping-bags-high-quality-photo_114579-91835.jpg'
-import Catogery from "../Components/Catogery";
-
-
-
+import Nav from "../Components/Nav";
+import Saidebar from "../Components/Saidebar";
+import HomeCategory from "./HomeCategory";
 function Home() {
-  
   return (
-    <div className="w-[90%] m-auto h-full">
-      <Navbar />
-      <div className="w-full flex justify-between ">
-     <Catogery/>
-      <img src={img} className=""/>
-      </div>
-{/*  */}
-<div>
+    <div className="w-full min-h-screen bg-bb">
+      <Nav />
 
-</div>
+      <div className="">
+        <h1 className="text-center my-3 font-roboto font-normal">
+          Shopoo protects you from payment to delivery with Trade Assurance.
+        </h1>
+      </div>
+
+      <div className="flex justify-between bg-gray-200 gap-x-8 w-full h-full">
+        <Saidebar />
+        <HomeCategory/>
+      </div>
     </div>
   );
 }
