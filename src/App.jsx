@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import Bags from "./pages/Bags";
 import ShoppingCart from "./pages/ShoppingCart";
 import Orders from "./pages/Orders";
+import OrderHome from "./pages/OrderHome";
 
 export default function App() {
   return (
@@ -19,6 +20,8 @@ export default function App() {
         <Route path="/bags" element={<Bags/>}/>
         <Route path="/cart" element={<ShoppingCart/>}/>
         <Route path="/orders" element={<Orders/>}/>
+        <Route path="/ordersHome" element={<OrderHome/>}/>
+
       </Routes>
     </div>
   )

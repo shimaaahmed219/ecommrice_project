@@ -14,7 +14,11 @@ function Home() {
 
       <div className="flex justify-between bg-gray-200 gap-x-8 w-full h-full">
         <Saidebar />
-        <HomeCategory/>
+
+        <div className="w-full">
+          {" "}
+          <HomeCategory />
+        </div>
       </div>
     </div>
   );

@@ -1,33 +1,72 @@
 import HomeIcon from "@mui/icons-material/Home";
 import MessageIcon from "@mui/icons-material/Message";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PriceChangeIcon from "@mui/icons-material/PriceChange";
 import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import TocIcon from "@mui/icons-material/Toc";
+import { useState } from "react";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+
+
 const list = [
-  { id: 1, name: "home", icon: <HomeIcon />, href: "/home" },
-  { id: 2, name: "message", icon: <MessageIcon />, href: "/message" },
-  { id: 3, name: "buying ", icon: <MessageIcon />, href: "" },
-  { id: 4, name: "orders", icon: <PriceChangeIcon />, href: "/orders" },
-  { id: 5, name: "my lists", icon: <TocIcon />, href: "/list" },
-  { id: 6, name: "contacts", icon: <SupervisorAccountIcon />, href: "" },
+  { id: 1, name: "home", icon: <HomeIcon />, href: "/ordersHome", to: "/ordersHome" },
+  {
+    id: 2,
+    name: "message",
+    icon: <MessageIcon />,
+    href: "/message",
+    to: "message",
+  },
+  { id: 3, name: "cart ", icon: <ShoppingCartIcon />, href: "/cart", to: "/cart" },
+  {
+    id: 4,
+    name: "orders",
+    icon: <PriceChangeIcon />,
+    href: "/orders",
+    to: "/orders",
+  },
+  { id: 5, name: "my lists", icon: <TocIcon />, href: "/list", to: "/list" },
+  {
+    id: 6,
+    name: "contacts",
+    icon: <SupervisorAccountIcon />,
+    href: "contact",
+    to: "/contact",
+  },
 ];
 
 export default function OrderSaidebar() {
+  const location = useLocation();
+  const [activePage, setActivePage] = useState(location.pathname);
+  const handleItemClick = (to) => {
+    setActivePage(to);
+  };
   return (
-    <div className="w-[230px] h-full flex bg-so">
-      <div className="w-[80px] h-[460px] bg-saidOrder [&>*:nth-child(4)]:bg-so  [&>*:nth-child(4)]:w-full  [&>*:nth-child(4)]:mx-0  [&>*:nth-child(4)]:border-l-4  [&>*:nth-child(4)]:border-l-oranged">
-        {list.map((item) => (
-          <Link
-            className="flex flex-col my-5 mx-2 py-2 items-center text-cnter text-white"
-            key={item.id}
-            to={item.href}
-          >
-            {" "}
-            {item.icon}
-            <span>{item.name}</span>
-          </Link>
-        ))}
+    <div className="w-[230px] min-h-full flex bg-so  ">
+      <div className="w-[80px] fexid  h-[500px] bg-saidOrder">
+        <ul>
+          {list.map((item) => (
+            <li
+              className={`${
+                activePage === item.to
+                  ? "bg-so mx-0 border-l-4 border-l-oranged w-full"
+                  : ""
+              }`}
+              key={item.id}
+              onClick={() => handleItemClick(item.to)}
+            >
+              <Link
+                className="flex flex-col my-5 mx-2 py-2 items-center text-cnter text-white"
+                to={item.href}
+              >
+                {" "}
+                {item.icon}
+                <span>{item.name}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
       <div className="flex flex-col text-gray-300">
         <h2 className="text-white font-bold m-3">orders</h2>

@@ -40,8 +40,8 @@ export default function Seal() {
       <h1 className="my-10 font-bold text-[32px] text-oranged">10% discount</h1>
       <Slider {...settings}>
         {seal.map((item) => (
-          <div className="">
-            <div className="mb-3 relative">
+          <div  className="">
+            <div key={item.id} className="mb-3 relative">
               <img src={item.image} className=" w-[200px] h-[250px]" />
               <input
                 type="button"

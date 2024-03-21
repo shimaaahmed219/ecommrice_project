@@ -9,7 +9,7 @@ export default function HomeCategory() {
   }, []);
   console.log(allProduct);
   return (
-    <div className="py-10 w-[80%]">
+    <div className="py-10 w-full mx-3">
       <div className="grid-cols-4 grid gap-x-5 px-3">
         {allProduct.map((item, index) => (
           <div key={item.id}>
