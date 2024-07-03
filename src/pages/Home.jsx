@@ -1,11 +1,13 @@
-import Nav from "../Components/Nav";
+import Footer from "../Components/Footer";
+// import Pagination from "../Components/Home/Pagination";
+import Navbar from "../Components/Navbar";
 import Saidebar from "../Components/Saidebar";
 import HomeCategory from "./HomeCategory";
 function Home() {
   return (
     <div className="w-full min-h-screen bg-bb">
-      <Nav />
-
+      {/* <Nav /> */}
+      <Navbar/>
       <div className="">
         <h1 className="text-center my-3 font-roboto font-normal">
           Shopoo protects you from payment to delivery with Trade Assurance.
@@ -18,8 +20,15 @@ function Home() {
         <div className="w-full">
           {" "}
           <HomeCategory />
+        
         </div>
+      
       </div>
+      <div className="bg-gray-200  w-full">
+      {/* <Pagination/> */}
+      <Footer/>
+      </div>
+     
     </div>
   );
 }

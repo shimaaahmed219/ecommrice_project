@@ -11,6 +11,7 @@ export default function BagPage() {
       .then((data) => setProduct(data.data));
   }, []);
 
+
   const addToCart = async (product) => {
     const productId = product.id;
     axios
@@ -40,6 +41,8 @@ export default function BagPage() {
         console.error("Error fetching cart data:", error);
       });
   };
+
+  
 
   return (
     <div className="w-full h-full mt-[100px]">

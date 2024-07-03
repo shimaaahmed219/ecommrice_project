@@ -1,0 +1,18 @@
+::-webkit-scrollbar {
+    width: 10px; /* عرض شريط التمرير */
+  }
+  
+  /* لون شريط التمرير */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* لون خلفية شريط التمرير */
+  }
+  
+  /* لون المقبض */
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* لون المقبض */
+  }
+  
+  /* لون المقبض عند تحريكه */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* لون المقبض عند التحريك */
+  }

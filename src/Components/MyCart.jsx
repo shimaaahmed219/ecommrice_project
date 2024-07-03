@@ -3,11 +3,12 @@ import axios from "axios";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import OrderSaidebar from "./OrderSaidebar";
-// import {  useState } from "react";
+import { FormControlLabel, Checkbox } from "@mui/material";
+import {  useState } from "react";
 
 export default function MyCart({ cart, setCart }) {
   // const [loading,setLoading] =useState(false)
-
+const [checked,setChecked]= useState(false)
   // total price
   const totalPrice = cart
     .reduce((total, item) => total + item.price * item.quantity, 0)
@@ -57,6 +58,24 @@ export default function MyCart({ cart, setCart }) {
     });
   };
   console.log(cart);
+  const handleCheck = (id) => {
+    setChecked((prevCheckedItems) => ({
+      ...prevCheckedItems,
+      [id]: !prevCheckedItems[id],
+    }));
+    confermOrder(id); // تأكيد المنتج عند تحديد الـ checkbox
+  };
+  const confermOrder = (id) => {
+    const selectedItem = cart.find((item) => item.id === id);
+    axios
+      .post('http://localhost:3000/orders', selectedItem)
+      .then((response) => console.log(response));
+      const updatedCart = cart.filter((item) => item.id !== id);
+      setCart(updatedCart);
+      console.log('Order confirmed:');
+    }
+    
+console.log(checked);
   return (
     <div className={`${cart.length <= 0 && "hidden"} w-full max-h-[600px] `}>
       <div className="flex">
@@ -110,6 +129,16 @@ export default function MyCart({ cart, setCart }) {
                     <span className="font-medum">delete</span>
                     <DeleteIcon />
                   </button>
+               
+
+                  <FormControlLabel
+                 checked={checked[item.id] || false}
+                 onChange={() => handleCheck(item.id)}
+                  
+                    control={<Checkbox style={{ color: "#ea6c0c" }} />}
+                    label="Confirmation"
+                  />
+                
                 </div>
                 <hr className="w-full h-[2px] bg-gray-200" />
               </div>
