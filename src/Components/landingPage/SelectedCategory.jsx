@@ -3,7 +3,7 @@ import {  useState } from "react";
 import { Link } from "react-router-dom";
 import { GrFormNextLink } from "react-icons/gr";
 const SelectedCategory = () => {
-  const [categories, setCategories] = useState([
+  const categories=[
     {
       "id": 1,
       "title": "Most popular",
@@ -185,7 +185,7 @@ const SelectedCategory = () => {
       ]
     }
   
-  ]);
+  ];
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
   // useEffect(() => {

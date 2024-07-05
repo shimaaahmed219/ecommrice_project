@@ -1,11 +1,16 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router";
+// import axios from "axios";
+import { useState} from "react";
+// import { useParams } from "react-router";
 import Nav from "../../Components/Home/ImageDetails/Nav";
 
 export default function ImageDetails() {
-  const { id } = useParams();
-  const [image, setImage] = useState(null);
+  // const { id } = useParams();
+  const [image, setImage] = useState({
+    id: 1,
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMBqQYATniDd9xu_iaGTO8MDZicSfcLJaA1g&usqp=CAU",
+    title: "Most popular score 2.4",
+    price: 600,
+  });
 
   const discount = 0.238;
   const discoun = 0.276;
@@ -16,24 +21,24 @@ export default function ImageDetails() {
     return price - price * discoun;
   };
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:3000/categories`)
-      .then((response) => {
-        const categories = response.data;
-        let foundImage = null;
-        categories.forEach((category) => {
-          const img = category.images.find(
-            (image) => image.id.toString() === id
-          );
-          if (img) {
-            foundImage = img;
-          }
-        });
-        setImage(foundImage);
-      })
-      .catch((error) => console.error("Error fetching data: ", error));
-  }, [id]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:3000/categories`)
+  //     .then((response) => {
+  //       const categories = response.data;
+  //       let foundImage = null;
+  //       categories.forEach((category) => {
+  //         const img = category.images.find(
+  //           (image) => image.id.toString() === id
+  //         );
+  //         if (img) {
+  //           foundImage = img;
+  //         }
+  //       });
+  //       setImage(foundImage);
+  //     })
+  //     .catch((error) => console.error("Error fetching data: ", error));
+  // }, [id]);
 
   return (
     <div className=" bg-white min-h-screen">
