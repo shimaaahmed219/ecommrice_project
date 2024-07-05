@@ -1,14 +1,43 @@
 import { Link } from "react-router-dom";
 import { GrFormNextLink } from "react-icons/gr";
-import { useEffect, useState } from "react";
-import axios from "axios";
+// import { useEffect, useState } from "react";
+// import axios from "axios";
 import FooterEnd from "./FooterEnd";
 
 export default function Suppiers() {
-  const [flag, setflag] = useState([]);
-  useEffect(() => {
-    axios.get(`http://localhost:3000/flags`).then((res) => setflag(res.data));
-  });
+  const flag=[
+    {
+      " id": 1,
+      "images": "https://cdn-icons-png.flaticon.com/128/11848/11848666.png"
+    },
+    {
+      " id": 2,
+      "images": "https://cdn-icons-png.flaticon.com/128/197/197467.png"
+    },
+    {
+      " id": 3,
+      "images": "https://cdn-icons-png.flaticon.com/128/16022/16022620.png"
+    },
+    {
+      " id": 4,
+      "images": "https://cdn-icons-png.flaticon.com/128/16022/16022875.png"
+    },
+    {
+      " id": 5,
+      "images": "https://cdn-icons-png.flaticon.com/128/11849/11849161.png"
+    },
+    {
+      " id": 6,
+      "images": "https://cdn-icons-png.flaticon.com/128/11849/11849161.png"
+    },
+    {
+      " id": 7,
+      "images": "https://cdn-icons-png.flaticon.com/128/16022/16022416.png"
+    }
+  ];
+  // useEffect(() => {
+  //   axios.get(`http://localhost:3000/flags`).then((res) => setflag(res.data));
+  // });
   return (
     <div className="m-auto w-full bg-bg h-full pt-10 py-2 mt-10">
       <div className="flex justify-between w-[90%] m-auto my-10">
