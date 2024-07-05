@@ -9,7 +9,7 @@ export default function HomeCategory() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
   useEffect(() => {
-    axios(`http://localhost:3000/all`).then((data) => setAllProduct(data.data));
+    axios(`https://fakestoreapi.com/products`).then((data) => setAllProduct(data.data));
   }, []);
   console.log(allProduct);
   const indexOfLastItem = currentPage * itemsPerPage;
