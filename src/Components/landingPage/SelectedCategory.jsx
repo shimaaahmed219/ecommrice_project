@@ -1,24 +1,206 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import {  useState } from "react";
+// import axios from "axios";
 import { Link } from "react-router-dom";
 import { GrFormNextLink } from "react-icons/gr";
 const SelectedCategory = () => {
-  const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:3000/categories")
-      .then((response) => {
-        setCategories(response.data);
-        if (response.data.length > 0) {
-          setSelectedCategory(response.data[0]);
+  const [categories, setCategories] = useState([
+    {
+      "id": 1,
+      "title": "Most popular",
+      "images": [
+        {
+          "id": 1,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMBqQYATniDd9xu_iaGTO8MDZicSfcLJaA1g&usqp=CAU",
+          "title": "Most popular score 2.4",
+          "price": 600
+        },
+        {
+          "id": 2,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeiQL8mRG6gIJSt5tOSLqS9L6FRk6dEYWeOQ&usqp=CAU",
+          "title": "Most popular score 2.4",
+          "price": 600
+        },
+        {
+          "id": 3,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8xvnR3CEgZ4L-Um6ugGBS4-kfMmzzqC_Lsw&usqp=CAU",
+          "title": "Most popular score 2.4",
+          "price": 600
+        },
+        {
+          "id": 4,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsfqDw2eZZR9NWLwlfY6M2ZVVL1xN4hvGQUw&usqp=CAU",
+          "title": "Most popular score 2.4",
+          "price": 600
+        },
+        {
+          "id": 5,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWb38XknIdS_nU8Tw0uWNE8cNmXioM4Jaa6A&usqp=CAU",
+          "title": "Most popular score 2.4",
+          "price": 600
+        },
+        {
+          "id": 6,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhVkrD5TQs0eshdhOpBwjMDyGysSgXMOikkw&usqp=CAUhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAYdpk9MuPotDghrB0xlWF7hw1OdLzI3HCvw&usqp=CAU",
+          "title": "Most popular score 2.4",
+          "price": 600
+        },
+        {
+          "id": 7,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIEHM0UPy0fZkODcMJHTIeKfD3c6CuX9xt935gzUg6-PvXfJky_Li_Zw4dKK2ypCRAqcg&usqp=CAU",
+          "title": "Most popular score 2.4",
+          "price": 600
+        },
+        {
+          "id": 8,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQShh_t1tonVg7aIlJYf4u3U6zAWDA8PIYiw&usqp=CAU",
+          "title": "Most popular score 2.4",
+          "price": 600
+        },
+        {
+          "id": 9,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1TB3ZitE88afO-9t1cR6zr7uxr3IDtgrnbw&usqp=CAU",
+          "title": "Most popular score 2.4",
+          "price": 600
         }
-      })
-      .catch((error) => {
-        console.error("Error fetching data: ", error);
-      });
-  }, []);
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Hot selling",
+      "images": [
+        {
+          "id": 10,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1TB3ZitE88afO-9t1cR6zr7uxr3IDtgrnbw&usqp=CAU",
+          "title": "Hot selling score 3.5",
+          "price": 600
+        },
+        {
+          "id": 11,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhVkrD5TQs0eshdhOpBwjMDyGysSgXMOikkw&usqp=CAUhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAYdpk9MuPotDghrB0xlWF7hw1OdLzI3HCvw&usqp=CAU",
+          "title": "Hot selling score 3.5",
+          "price": 600
+        },
+        {
+          "id": 12,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsfqDw2eZZR9NWLwlfY6M2ZVVL1xN4hvGQUw&usqp=CAU",
+          "title": "Hot selling score 3.5",
+          "price": 600
+        },
+        {
+          "id": 13,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8xvnR3CEgZ4L-Um6ugGBS4-kfMmzzqC_Lsw&usqp=CAU",
+          "title": "Hot selling score 3.5",
+          "price": 600
+        },
+        {
+          "id": 14,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWb38XknIdS_nU8Tw0uWNE8cNmXioM4Jaa6A&usqp=CAU",
+          "title": "Hot selling score 3.5",
+          "price": 600
+        },
+        {
+          "id": 15,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeiQL8mRG6gIJSt5tOSLqS9L6FRk6dEYWeOQ&usqp=CAU",
+          "title": "Hot selling score 3.5",
+          "price": 600
+        },
+        {
+          "id": 16,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMBqQYATniDd9xu_iaGTO8MDZicSfcLJaA1g&usqp=CAU",
+          "title": "Hot selling score 3.5",
+          "price": 600
+        },
+        {
+          "id": 17,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIEHM0UPy0fZkODcMJHTIeKfD3c6CuX9xt935gzUg6-PvXfJky_Li_Zw4dKK2ypCRAqcg&usqp=CAU",
+          "title": "Hot selling score 3.5",
+          "price": 600
+        },
+        {
+          "id": 18,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQShh_t1tonVg7aIlJYf4u3U6zAWDA8PIYiw&usqp=CAU",
+          "title": "Hot selling score 3.5",
+          "price": 600
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Best reviewed",
+      "images": [
+        {
+          "id": 19,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhVkrD5TQs0eshdhOpBwjMDyGysSgXMOikkw&usqp=CAUhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAYdpk9MuPotDghrB0xlWF7hw1OdLzI3HCvw&usqp=CAU",
+          "title": "Best reviewed score:2.3",
+          "price": 600
+        },
+        {
+          "id": 20,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsfqDw2eZZR9NWLwlfY6M2ZVVL1xN4hvGQUw&usqp=CAU",
+          "title": "Best reviewed score:2.3",
+          "price": 600
+        },
+        {
+          "id": 21,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1TB3ZitE88afO-9t1cR6zr7uxr3IDtgrnbw&usqp=CAU",
+          "title": "Best reviewed score:2.3",
+          "price": 600
+        },
+        {
+          "id": 22,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeiQL8mRG6gIJSt5tOSLqS9L6FRk6dEYWeOQ&usqp=CAU",
+          "title": "Best reviewed score:2.3",
+          "price": 600
+        },
+        {
+          "id": 23,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIEHM0UPy0fZkODcMJHTIeKfD3c6CuX9xt935gzUg6-PvXfJky_Li_Zw4dKK2ypCRAqcg&usqp=CAU",
+          "title": "Best reviewed score:2.3",
+          "price": 600
+        },
+        {
+          "id": 24,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMBqQYATniDd9xu_iaGTO8MDZicSfcLJaA1g&usqp=CAU",
+          "title": "Best reviewed score:2.3",
+          "price": 600
+        },
+        {
+          "id": 25,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQShh_t1tonVg7aIlJYf4u3U6zAWDA8PIYiw&usqp=CAU",
+          "title": "Best reviewed score:2.3",
+          "price": 600
+        },
+        {
+          "id": 26,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWb38XknIdS_nU8Tw0uWNE8cNmXioM4Jaa6A&usqp=CAU",
+          "title": "Best reviewed score:2.3",
+          "price": 600
+        },
+        {
+          "id": 27,
+          "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8xvnR3CEgZ4L-Um6ugGBS4-kfMmzzqC_Lsw&usqp=CAU",
+          "title": "Best reviewed score:2.3",
+          "price": 600
+        }
+      ]
+    }
+  
+  ]);
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:3000/categories")
+  //     .then((response) => {
+  //       setCategories(response.data);
+  //       if (response.data.length > 0) {
+  //         setSelectedCategory(response.data[0]);
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data: ", error);
+  //     });
+  // }, []);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
