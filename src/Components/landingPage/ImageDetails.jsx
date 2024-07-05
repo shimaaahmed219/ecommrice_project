@@ -1,16 +1,16 @@
 // import axios from "axios";
-import { useState} from "react";
+// import { useState} from "react";
 // import { useParams } from "react-router";
 import Nav from "../../Components/Home/ImageDetails/Nav";
 
 export default function ImageDetails() {
   // const { id } = useParams();
-  const [image, setImage] = useState({
+  const image={
     id: 1,
     url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMBqQYATniDd9xu_iaGTO8MDZicSfcLJaA1g&usqp=CAU",
     title: "Most popular score 2.4",
     price: 600,
-  });
+  };
 
   const discount = 0.238;
   const discoun = 0.276;
