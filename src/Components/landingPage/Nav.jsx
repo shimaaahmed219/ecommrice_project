@@ -8,7 +8,8 @@ import LandHover from "./LandHover";
 
 export default function Nav() {
   return (
-    <div className="w-full absolute top-0  flex-col shadow-xl flex px-10 bg-transparent">
+   <div className="sm:block hidden w-full">
+     <div className="w-full absolute top-0  flex-col shadow-xl flex px-10 bg-transparent">
       <div className="flex justify-between items-center ml-20  ">
         <div>
           {/* logo */}
@@ -53,5 +54,6 @@ export default function Nav() {
      </div>
     
     </div>
+   </div>
   );
 }

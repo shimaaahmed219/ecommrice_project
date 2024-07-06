@@ -12,11 +12,13 @@ import { GrFormNextLink } from "react-icons/gr";
 import NewArrivals from "../Components/landingPage/NewArrivals";
 import Suppiers from "../Components/landingPage/Suppiers";
 import NavbarPosition from "../Components/landingPage/NavbarPosition";
+import LandMop from "../Components/landingPage/LandMop/LandMop";
 
 export default function LandingPage() {
   return (
-    <div className="w-full min-h-screen ">
-      <NavbarPosition/>
+    <div className="w-full min-h-screen  ">
+     <div className="sm:block hidden">
+     <NavbarPosition/>
       <img
         className="sm:h-[420px] h-[300px]"
         src="https://s.alicdn.com/@img/imgextra/i2/O1CN01WhUxZ7288l4TC07G0_!!6000000007888-0-tps-1920-400.jpg"
@@ -49,6 +51,12 @@ export default function LandingPage() {
       <SelectedCategory />
       <NewArrivals/>
       <Suppiers/>
+      
+     </div>
+     <div className="">
+<LandMop/>
+
+     </div>
     </div>
   );
 }

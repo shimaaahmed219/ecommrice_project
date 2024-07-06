@@ -26,7 +26,9 @@ export default {
         "items":'#0000000b',
         "litter":"#3e1911",
         // "ca":"#f8f8f8"
-        "ca":"#f8f8f8"
+        "ca":"#f8f8f8",
+        "search":"#f1f0ef",
+        "bgMob":"#f9f7f7"
       },
       fontSize: {
         header: "18px"
