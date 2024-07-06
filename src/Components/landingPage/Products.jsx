@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 export default function Products() {
   return (
   <>
-  <div className="absolute top-[340px] text-white w-full flex  justify-center text-center">
+  <div className="  absolute top-[340px] text-white w-full flex  justify-center text-center">
         <h1 className="py-2">Frequently searched:</h1>
 
         <div className="  justify-around flex w-[55%] m-uto">

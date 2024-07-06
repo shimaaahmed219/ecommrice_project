@@ -24,7 +24,10 @@ export default function LandingPage() {
       <Nav />
       <Route />
       <Search />
+      <div className="md:block hidden">
       <Products />
+      </div>
+    
     <Quoition/>
 
       <Advertisements />

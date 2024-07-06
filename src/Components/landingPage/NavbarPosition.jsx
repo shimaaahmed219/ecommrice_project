@@ -35,7 +35,7 @@ const NavbarPosition = () => {
 
   return (
     <div
-      className={`fixed z-50 top-0 w-full bg-white  transition-transform duration-300 ${
+      className={`fixed z-50 top-0 py-2 w-full bg-white  transition-transform duration-300 ${
         showNavbar ? "transform translate-y-0" : "transform -translate-y-full"
       }`}
     >

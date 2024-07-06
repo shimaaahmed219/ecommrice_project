@@ -13,7 +13,7 @@ console.log(showItems)
       <div
         // onMouseOver={() => setIsHovered(true)}
        
-        className="flex justify-between text-[15px] capitalize  text-white"
+        className="flex justify-between md:text-[15px] text-[12px] capitalize  text-white"
       >
         <ul className="flex justify-between font-bold  gap-x-5 items-center font-roboto ">
           <li className=" flex ">
