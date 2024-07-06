@@ -14,7 +14,7 @@ export default function Manufacturers() {
 
       <NavbarPosition/>
       <img
-        className="h-[420px]"
+        className="sm:h-[420px] h-[300px]"
         src="https://s.alicdn.com/@img/imgextra/i2/O1CN01WhUxZ7288l4TC07G0_!!6000000007888-0-tps-1920-400.jpg"
       />
       <Nav />
