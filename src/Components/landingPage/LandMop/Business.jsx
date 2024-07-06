@@ -49,7 +49,7 @@ export default function Business() {
   return (
     <div
       {...swipeHandlers}
-      className="flex  overflow-hidden items-center justify-between mx-5 my-5 bg-gray-100"
+      className="flex  overflow-hidden items-center justify-between  my-5 bg-gray-100"
     >
       <div
         className="flex px-3 transition-transform duration-500"
@@ -58,11 +58,14 @@ export default function Business() {
         {rectangles.map((rectangle) => (
           <div
             key={rectangle.id}
-            className={`w-[30%] mx-2 flex-shrink-0 rounded-[10px] items-center h-[70px] ${rectangle.color}`}
+            className={`w-[30%] mx-2 flex-shrink-0 rounded-[10px] items-center h-[60px] ${rectangle.color}`}
           >
-            <div className="text-white text-center  px-2 flex items-center h-[70px] justify-between">
+            <div className="text-white text-center  px-2 flex items-center h-[60px] justify-between">
               {" "}
-            <div className="w-[60%] text-[13px] font-inter">{rectangle.name}</div> <div className="text-[40px] text-gray-300">{rectangle.icon}</div>
+              <div className="w-[70%] font-bold text-[12px] font-inter">
+                {rectangle.name}
+              </div>{" "}
+              <div className="text-[25px] text-gray-300">{rectangle.icon}</div>
             </div>
           </div>
         ))}

@@ -1,6 +1,7 @@
 import Route from "./Route";
 import Nav from "./Nav";
 import Business from "./Business";
+import Arrivals from "./Arrivals";
 
 
 
@@ -11,6 +12,7 @@ export default function LandMop() {
       <hr/>
       <Route/>
       <Business/>
+      <Arrivals/>
        
     </div>
   )
