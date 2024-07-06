@@ -28,7 +28,10 @@ export default {
         // "ca":"#f8f8f8"
         "ca":"#f8f8f8",
         "search":"#f1f0ef",
-        "bgMob":"#f9f7f7"
+        "bgMob":"#f9f7f7",
+        "bluee":"#0e1258",
+        "greenn":"#00341f",
+        "tt":"#740df2"
       },
       fontSize: {
         header: "18px"
