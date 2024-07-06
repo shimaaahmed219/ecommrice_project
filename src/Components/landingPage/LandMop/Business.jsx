@@ -49,7 +49,7 @@ export default function Business() {
   return (
     <div
       {...swipeHandlers}
-      className="flex  overflow-hidden items-center justify-center mx-5 my-5 bg-gray-100"
+      className="flex  overflow-hidden items-center justify-between mx-5 my-5 bg-gray-100"
     >
       <div
         className="flex px-3 transition-transform duration-500"
