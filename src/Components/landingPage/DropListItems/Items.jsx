@@ -146,25 +146,10 @@ export default function Items() {
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhVkrD5TQs0eshdhOpBwjMDyGysSgXMOikkw&usqp=CAUhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAYdpk9MuPotDghrB0xlWF7hw1OdLzI3HCvw&usqp=CAU"
     }
   ]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(1);
   const [filteredItems, setFilteredItems] = useState([]);
   
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:3000/NameCtegory")
-  //     .then((response) => {
-  //       setData(response.data);
-  //       if (response.data.length > 0) {
-  //         const firstCategory = response.data[0];
-  //         setSelectedCategory(firstCategory.id);
-  //         // Fetch items for the first category
-  //         axios.get(`http://localhost:3000/items?categoryId=${firstCategory.id}`)
-  //           .then(response => setItems(response.data))
-  //           .catch(error => console.error('Error fetching items:', error));
-  //       }
-  //     })
-  //     .catch((error) => console.error("Error fetching data", error));
-  // }, []);
+  
 
   
   const handleCategoryClick = (categoryId) => {
