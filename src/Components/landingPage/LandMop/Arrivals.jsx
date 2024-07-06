@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
+import { GrFormNextLink } from "react-icons/gr";
 export default function Arrivals() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -89,35 +90,41 @@ export default function Arrivals() {
     onSwipedRight: handlePrev,
   });
   return (
-  <>
-  <h1 className="px-5 font-semibold text-[20px] font-inter">New arrivals</h1>
-    <div
-      {...swipeHandlers}
-      className="flex  overflow-hidden items-center justify-between  my-5"
-    >
-      <div
-        className="flex px-3 transition-transform duration-500"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {data.map((item) => (
-          <div
-            key={item.id}
-            className={`w-[30%] mx-2 flex-shrink-0 rounded-[10px] items-center h-[290px] `}
-          >
-            <div className="  px-2 font-bold  h-[60px] ">
-              <div className="text-[25px] text-gray-300">
-                <img className="w-full h-[200px]" src={item.image} />
-              </div>
-              <div>EGP{item.price}-</div>
-              <div>EGP{item.price}</div>
-              <p className="text-gray-600 text-[15px] font-thin capitalize">
-                moq : 1 price
-              </p>
-            </div>
-          </div>
-        ))}
+    <>
+      <div className="flex justify-between px-3">
+        <h1 className="px-5 font-semibold text-[20px] font-inter">
+          New arrivals
+        </h1>
+        <GrFormNextLink />
       </div>
-    </div>
-  </>
+
+      <div
+        {...swipeHandlers}
+        className="flex  overflow-hidden items-center justify-between  my-5"
+      >
+        <div
+          className="flex px-3 transition-transform duration-500"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {data.map((item) => (
+            <div
+              key={item.id}
+              className={`w-[30%] mx-2 flex-shrink-0 rounded-[10px] items-center h-[290px] `}
+            >
+              <div className="  px-2 font-bold  h-[60px] ">
+                <div className="text-[25px] text-gray-300">
+                  <img className="w-full h-[160px]" src={item.image} />
+                </div>
+                <div>EGP{item.price}-</div>
+                <div>EGP{item.price}</div>
+                <p className="text-gray-600 text-[15px] font-thin capitalize">
+                  moq : 1 price
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   );
 }
