@@ -188,7 +188,7 @@ export default function TopRanking() {
 
       return (
         <>
-          <div className="flex justify-between px-3 mt-[-30px]">
+          <div className="flex justify-between px-3 mt-[-50px]">
             <h1 className="px-5 font-semibold text-[20px] font-inter">
             Top ranking
             </h1>

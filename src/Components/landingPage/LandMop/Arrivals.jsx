@@ -111,11 +111,11 @@ export default function Arrivals() {
               key={item.id}
               className={`w-[30%] mx-2 flex-shrink-0 rounded-[10px] items-center h-[290px] `}
             >
-              <div className="  px-2 font-bold  h-[60px] ">
-                <div className="text-[25px] text-gray-300">
+              <div className="  px-2 font-semibold   h-[60px] ">
+                <div className="text-[20px] text-gray-300">
                   <img className="w-full h-[160px]" src={item.image} />
                 </div>
-                <div>EGP{item.price}-</div>
+                <div className="mt-2">EGP{item.price}-</div>
                 <div>EGP{item.price}</div>
                 <p className="text-gray-600 text-[15px] font-thin capitalize">
                   moq : 1 price
