@@ -20,7 +20,9 @@ export default function Manufacturers() {
       <Nav />
       <Route/>
       <Search />
-      <Products/>
+      <div className="md:block hidden">
+      <Products />
+      </div>
       <div className="my-5 border-b-[1px] border-gray-300">
       <Quoition/>
       </div>
