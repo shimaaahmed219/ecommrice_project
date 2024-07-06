@@ -1,5 +1,6 @@
 import Route from "./Route";
 import Nav from "./Nav";
+import Business from "./Business";
 
 
 
@@ -9,6 +10,7 @@ export default function LandMop() {
       <Nav/>
       <hr/>
       <Route/>
+      <Business/>
        
     </div>
   )
