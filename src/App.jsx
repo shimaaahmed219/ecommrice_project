@@ -14,6 +14,7 @@ import Test from "./pages/Test";
 import ImageDetails from "./Components/landingPage/ImageDetails";
 import Login from "./pages/Login";
 import Shoes from "./pages/Shoes";
+import AllCategory from "./pages/AllCategory";
 export default function App() {
   return (
     <div>
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/Test" element={<Test/>}/>
         <Route path="/image/:id" element={<ImageDetails/>}/>
         <Route path="login" element={<Login/>}/>
+        <Route path="/allcategory" element={<AllCategory/>}/>
       </Routes>
     </div>
   )

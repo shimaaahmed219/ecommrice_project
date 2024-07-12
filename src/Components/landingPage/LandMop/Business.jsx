@@ -5,6 +5,8 @@ import { RiCompass2Line } from "react-icons/ri";
 import { RiShip2Line } from "react-icons/ri";
 import { TbWorldCancel } from "react-icons/tb";
 import { GrFormNextLink } from "react-icons/gr";
+import { Link } from "react-router-dom";
+
 export default function Business() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -14,18 +16,21 @@ export default function Business() {
       color: "bg-oranged",
       name: "All categories",
       icon: <BiCategoryAlt />,
+      href:"/allCategory"
     },
     {
       id: 2,
       color: "bg-bluee",
       name: "Request for Quotation",
       icon: <RiCompass2Line />,
+      href:"/"
     },
     {
       id: 3,
       color: "bg-greenn",
       name: "Logistics services",
       icon: <RiShip2Line />,
+      href:"/"
     },
     {
       id: 4,
@@ -65,18 +70,24 @@ export default function Business() {
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {rectangles.map((rectangle) => (
-          <div
+        
+              <div
             key={rectangle.id}
             className={`w-[30%] mx-1 flex-shrink-0 rounded-[10px] items-center h-[60px] ${rectangle.color}`}
           >
-            <div className="text-white text-center  px-2 flex items-center h-[60px] justify-between">
-              {" "}
-              <div className="w-[70%] font-bold text-[12px] font-inter">
+            <div className="text-white">
+             <Link className=" text-center  px-2 w-full flex items-center h-[60px] justify-between" to={rectangle.href}>
+             <div className="w-[70%] font-bold text-[12px] font-inter">
                 {rectangle.name}
               </div>{" "}
               <div className="text-[25px] text-gray-300">{rectangle.icon}</div>
+             </Link>
+              {" "}
+           
             </div>
           </div>
+        
+        
         ))}
       </div>
     </div>
