@@ -14,7 +14,7 @@ export default function Footer() {
 
    <li className="flex-col flex items-center ">
     < FaEye className="text-[15px]"/>
-    <Link>Tops</Link>
+    <Link to="/login">login</Link>
    </li>
 
    <li className="flex-col flex items-center ">
