@@ -25,7 +25,7 @@ export default function Login() {
       {/* <Nav /> */}
       <form
         onSubmit={handleSubmit(onsubmit)}
-        className=" w-2/6 h-full py-5 flex flex-col m-auto justify-center items-center"
+        className=" md:w-2/6 h-full py-5 flex flex-col m-auto justify-center items-center"
       >
         <h1 className="font-inter font-semibold my-3 ">Sign In/Register</h1>
         <h6 className="text-red-500 font-inter text-[10px] font-bold mb-4">

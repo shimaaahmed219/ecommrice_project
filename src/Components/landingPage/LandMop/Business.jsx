@@ -4,6 +4,7 @@ import { BiCategoryAlt } from "react-icons/bi";
 import { RiCompass2Line } from "react-icons/ri";
 import { RiShip2Line } from "react-icons/ri";
 import { TbWorldCancel } from "react-icons/tb";
+import { GrFormNextLink } from "react-icons/gr";
 export default function Business() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -47,6 +48,14 @@ export default function Business() {
   });
 
   return (
+   <>
+     <div className="flex my-5 justify-between px-3">
+        <h1 className=" capitalize font-semibold text-[18px] font-inter">
+         for your business
+        </h1>
+        <GrFormNextLink />
+      </div>
+
     <div
       {...swipeHandlers}
       className="flex  overflow-hidden items-center justify-between  my-5 bg-gray-100"
@@ -71,5 +80,6 @@ export default function Business() {
         ))}
       </div>
     </div>
+   </>
   );
 }

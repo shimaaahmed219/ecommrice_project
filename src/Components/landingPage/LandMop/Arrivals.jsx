@@ -92,7 +92,7 @@ export default function Arrivals() {
   return (
     <>
       <div className="flex justify-between px-3">
-        <h1 className="px-5 font-semibold text-[20px] font-inter">
+        <h1 className=" font-semibold text-[18px] font-inter">
           New arrivals
         </h1>
         <GrFormNextLink />

@@ -4,6 +4,8 @@ import StarIcon from "@mui/icons-material/Star";
 import MapsUgcIcon from "@mui/icons-material/MapsUgc";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
+import { GrFormNextLink } from "react-icons/gr";
+
 export default function ForYou() {
   const [allProduct, setAllProduct] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,6 +38,14 @@ export default function ForYou() {
 
   return (
     <div className="py-10 w-full">
+        <div className="flex my-5 justify-between px-3 mt-[-50px]">
+        <h1 className="px-2  capitalize font-semibold text-[18px] font-inter">
+         for your
+        </h1>
+        <GrFormNextLink />
+      </div>
+
+    
       <div className="grid sm:grid-cols-3 grid-cols-2 gap-x-5 px-3">
         {currentItems.map((item) => (
           <div key={item.id}>

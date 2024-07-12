@@ -11,7 +11,7 @@ export default function SectionOne() {
 
   console.log(cat);
   return (
-    <div className="w-[90%] m-auto  grid grid-cols-4 justify-between items-center">
+    <div className="w-[90%] m-auto  grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 xl:justify-between justify-around items-center">
       <div className="h-[400px] py-2 flex flex-col gap-y-2 w-[300px] text-black rounded-[10px] pb-2 bg-white">
         <h1 className="font-inter m-2 font-bold ">Source by category</h1>
         {cat.map((item) => (

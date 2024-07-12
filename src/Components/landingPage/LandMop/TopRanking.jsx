@@ -185,7 +185,7 @@ export default function TopRanking() {
   return (
     <>
       <div className="flex justify-between px-3 mt-[-50px]">
-        <h1 className="px-2 font-semibold text-[20px] font-inter">
+        <h1 className="px-2 font-semibold text-[18px] font-inter">
           Top ranking
         </h1>
         <GrFormNextLink />
