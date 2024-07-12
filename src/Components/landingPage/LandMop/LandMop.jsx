@@ -4,6 +4,7 @@ import Business from "./Business";
 import Arrivals from "./Arrivals";
 import TopRanking from "./TopRanking";
 import Footer from "./Footer";
+import ForYou from "./ForYou";
 
 export default function LandMop() {
   return (
@@ -15,6 +16,7 @@ export default function LandMop() {
       <Arrivals/>
       <TopRanking/>
        <Footer/>
+       <ForYou/>
     </div>
   )
 }

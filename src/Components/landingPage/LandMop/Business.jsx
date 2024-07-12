@@ -52,13 +52,13 @@ export default function Business() {
       className="flex  overflow-hidden items-center justify-between  my-5 bg-gray-100"
     >
       <div
-        className="flex px-3 transition-transform duration-500"
+        className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {rectangles.map((rectangle) => (
           <div
             key={rectangle.id}
-            className={`w-[30%] mx-2 flex-shrink-0 rounded-[10px] items-center h-[60px] ${rectangle.color}`}
+            className={`w-[30%] mx-1 flex-shrink-0 rounded-[10px] items-center h-[60px] ${rectangle.color}`}
           >
             <div className="text-white text-center  px-2 flex items-center h-[60px] justify-between">
               {" "}

@@ -103,13 +103,13 @@ export default function Arrivals() {
         className="flex  overflow-hidden items-center justify-between  my-5"
       >
         <div
-          className="flex px-3 transition-transform duration-500"
+          className="flex  transition-transform duration-500"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {data.map((item) => (
             <div
               key={item.id}
-              className={`w-[30%] mx-2 flex-shrink-0 rounded-[10px] items-center h-[290px] `}
+              className={`w-[30%]  flex-shrink-0 rounded-[10px] items-center h-[290px] `}
             >
               <div className="  px-2 font-semibold   h-[60px] ">
                 <div className="text-[20px] text-gray-300">
