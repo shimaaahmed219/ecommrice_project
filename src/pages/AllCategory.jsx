@@ -2,11 +2,13 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Nav from "../Components/landingPage/LandMop/Nav";
 import Footer from "../Components/landingPage/LandMop/Footer";
+import { FaCheckCircle } from "react-icons/fa";
 
 export default function AllCategory() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [items, setItems] = useState([]);
+  const [addedToCart, setAddedToCart] = useState([]);
   const userId = 1;
 
   useEffect(() => {
@@ -46,6 +48,7 @@ export default function AllCategory() {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
         cart.push(item);
         localStorage.setItem("cart", JSON.stringify(cart));
+        setAddedToCart((prev) => [...prev, item.id]);
       })
       .catch((error) => console.error("Error adding to cart:", error));
   };
@@ -89,10 +92,20 @@ export default function AllCategory() {
             <p className="ml-1 text-[12px] capitalize">min order 2 pieces</p>
             <div>
               <button
-                className="w-full flex rounded-[20px] h-[30px] justify-center items-center bg-oranged text-[14px] mt-1 text-white"
+                className={`w-full flex rounded-[20px] h-[30px] justify-center items-center ${
+                  addedToCart.includes(item.id) ? "bg-oranged" : "bg-oranged"
+                } text-[14px] mt-1 text-white`}
                 onClick={() => addToCart(item)}
+                disabled={addedToCart.includes(item.id)}
               >
-                Add to Cart
+                {addedToCart.includes(item.id) ? (
+                  <>
+                    <FaCheckCircle className="inline mr-1" />
+                    Added
+                  </>
+                ) : (
+                  "Add to Cart"
+                )}
               </button>
             </div>
           </div>

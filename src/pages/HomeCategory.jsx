@@ -1,25 +1,22 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
 import StarIcon from "@mui/icons-material/Star";
 import MapsUgcIcon from "@mui/icons-material/MapsUgc";
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
-export default function HomeCategory() {
-  const [allProduct, setAllProduct] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
+import { FaCheckCircle } from "react-icons/fa";
 
-  useEffect(() => {
-    axios(`https://fakestoreapi.com/products`).then((data) =>
-      setAllProduct(data.data)
-    );
-  }, []);
-  
+import axios from "axios";
+import { useState } from "react";
+
+export default function HomeCategory({ currentPage, setCurrentPage, allProduct }) {
+  const itemsPerPage = 8;
+  const [addedToCart, setAddedToCart] = useState([]);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = allProduct.slice(indexOfFirstItem, indexOfLastItem);
 
+  const userId = 1;
   const totalPages = Math.ceil(allProduct.length / itemsPerPage);
 
   const handleNextPage = () => {
@@ -38,6 +35,25 @@ export default function HomeCategory() {
     setCurrentPage(pageNumber);
   };
 
+  const addToCart = (item) => {
+    const cartItem = {
+      userId: userId,
+      date: new Date().toISOString(),
+      products: [{ productId: item.id, quantity: 1 }],
+    };
+
+    axios
+      .post(`https://fakestoreapi.com/carts`, cartItem)
+      .then((response) => {
+        console.log("Item added to cart:", response.data);
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push(item);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        setAddedToCart((prev) => [...prev, item.id]);
+      })
+      .catch((error) => console.error("Error adding to cart:", error));
+  };
+
   return (
     <div className="py-10 w-full">
       <div className="grid xl:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-x-5 px-3">
@@ -45,7 +61,7 @@ export default function HomeCategory() {
           <div key={item.id}>
             <img
               src={item.image}
-              className=" hover:scale-[1.1] h-[250px] w-[250px]"
+              className="hover:scale-[1.1] h-[250px] w-[250px]"
               alt={item.title}
             />
             <h6 className="font-light font-roboto mt-3 text-[15px]">
@@ -70,8 +86,21 @@ export default function HomeCategory() {
               <span className="ml-4 text-gray-500">{"great service"}</span>
             </div>
             <div className="flex items-center pr-10">
-              <button className="bg-orange-500 text-white w-[80px] h-[40px] rounded-[25px] my-5">
-                Buy Now
+              <button
+                onClick={() => addToCart(item)}
+                disabled={addedToCart.includes(item.id)}
+                className={`${
+                  addedToCart.includes(item.id) ? "bg-orange-500" : "bg-orange-500"
+                } text-white w-[80px] h-[40px] rounded-[25px] my-5`}
+              >
+                {addedToCart.includes(item.id) ? (
+                  <>
+                    <FaCheckCircle className="inline mr-1" />
+                    Added
+                  </>
+                ) : (
+                  "Buy Now"
+                )}
               </button>
               <MapsUgcIcon className="text-blue-500 ms-auto" />
             </div>
@@ -79,7 +108,7 @@ export default function HomeCategory() {
         ))}
       </div>
 
-      <div className="flex justify-center   mt-10  w-[100%] h-[80px] items-center bg-bb">
+      <div className="flex justify-center mt-10 w-[100%] h-[80px] items-center bg-bb">
         <button
           onClick={handlePreviousPage}
           disabled={currentPage === 1}
@@ -92,9 +121,7 @@ export default function HomeCategory() {
             key={index + 1}
             onClick={() => handlePageClick(index + 1)}
             className={`w-[30px] h-[30px] rounded-[4px] mx-1 ${
-              currentPage === index + 1
-                ? "bg-oranged text-white"
-                : "bg-gray-300 text-black"
+              currentPage === index + 1 ? "bg-oranged text-white" : "bg-gray-300 text-black"
             }`}
           >
             {index + 1}

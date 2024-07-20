@@ -1,9 +1,23 @@
+import { useEffect, useState } from "react";
 import Footer from "../Components/Footer";
 import HomeMop from "../Components/Home/Hommop/HomeMop";
 import Navbar from "../Components/Navbar";
 import Saidebar from "../Components/Saidebar";
 import HomeCategory from "./HomeCategory";
+import axios from "axios";
+
 function Home() {
+  const [allProduct, setAllProduct] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  
+
+  useEffect(() => {
+    axios(`https://fakestoreapi.com/products`).then((data) =>
+      setAllProduct(data.data)
+    );
+  }, []);
+
+
   return (
     <div className="w-full min-h-screen bg-bb">
     <div className="md:block hidden">
@@ -20,7 +34,7 @@ function Home() {
 
         <div className="w-full">
           {" "}
-          <HomeCategory />
+          <HomeCategory  currentPage={currentPage} allProduct={allProduct} setCurrentPage={setCurrentPage}/>
         
         </div>
       
