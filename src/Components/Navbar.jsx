@@ -18,9 +18,9 @@ export default function Navbar() {
         </div>
         {/* search input */}
 
-        <div className=" mt-5 p-[2px] border-[1px]  rounded-[20px]  h-[50px] flex justify-between items-center w-[500px]">
+        <div className=" mt-5 p-[2px] border-[1px]  rounded-[20px]  hidden h-[50px] md:flex justify-between items-center w-[300px] lg:w-[500px]">
           {/* select Categories */}
-          <select className=" bg-bg outline-none px-2 mr-2 border-r-[1px] border-black">
+          <select className="  bg-bg outline-none px-2 mr-2 border-r-[1px] border-black">
             <option value="saab">Saab</option>
             <option value="vw">VW</option>
             <option value="audi" selected>
@@ -36,9 +36,9 @@ export default function Navbar() {
 
           <CameraAltIcon className="text-gray-700 mx-3 hover:text-oranged" />
           {/* search button */}
-          <button className="w-[120px] text-white   h-full rounded-[20px] bg-oranged">
+          <button className="w-[120px] text-white  rounded-[10px]  h-full xl:rounded-[20px] bg-oranged">
             <SearchOutlined className=" right-2 top-2" />
-            search
+            <span className="lg:inline hidden">search</span>
           </button>
         </div>
         <div className="flex justify-between gap-x-7">

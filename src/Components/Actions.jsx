@@ -27,7 +27,7 @@ export default function Actions() {
             <Link to="">shopo Membership</Link>
           </li>
         </ul>
-        <ul className="flex justify-between gap-x-5 items-center px-10 font-roboto">
+        <ul className="md:flex hidden justify-between gap-x-5 items-center px-10 font-roboto">
           <li>
             <Link>Buyer Central</Link>
           </li>

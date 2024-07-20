@@ -15,6 +15,7 @@ import ImageDetails from "./Components/landingPage/ImageDetails";
 import Login from "./pages/Login";
 import Shoes from "./pages/Shoes";
 import AllCategory from "./pages/AllCategory";
+import Cart from "./pages/Cart";
 export default function App() {
   return (
     <div>
@@ -27,7 +28,8 @@ export default function App() {
         <Route path="/bags" element={<Bags/>}/>
         <Route path="/blouse" element={<Blouse/>}/>
         <Route path="/shoes" element={<Shoes/>}/>
-        <Route path="/cart" element={<ShoppingCart/>}/>
+        {/* <Route path="/cart" element={<ShoppingCart/>}/> */}
+        <Route path="/cart" element={<Cart/>}/>
         <Route path="/orders" element={<Orders/>}/>
         <Route path="/ordersHome" element={<OrderHome/>}/>
         <Route path="/Test" element={<Test/>}/>

@@ -10,7 +10,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
 const list = [
-  { id: 1, name: "home", icon: <HomeIcon />, href: "/ordersHome", to: "/ordersHome" },
+  { id: 1, name: "home", icon: <HomeIcon />, href: "/home", to: "/ordersHome" },
   {
     id: 2,
     name: "message",
